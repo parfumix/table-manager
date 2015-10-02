@@ -21,7 +21,9 @@ class Eloquent extends Driver implements DriverAble {
 
         $fields = [];
 
-        $columns = $this->getSource()->getModel()->skyShow();
+        $columns = $this->getSource()->getModel()->getFillable();
+        if( array_key_exists('skyShow', get_class_methods(get_class($this->getSource()->getModel()))))
+            $columns = $this->getSource()->getModel()->skyShow();
 
         foreach ($rows as $key => $row) {
             foreach ($columns as $columnKey => $column) {
@@ -55,7 +57,10 @@ class Eloquent extends Driver implements DriverAble {
      * @return mixed
      */
     public function filterFields() {
-        return $this->getSource()->getModel()
-            ->skyFilter();
+        $columns = $this->getSource()->getModel()->getFillable();
+        if( array_key_exists('skyFilter', get_class_methods(get_class($this->getSource()->getModel()))))
+            $columns = $this->getSource()->getModel()->skyFilter();
+
+        return $columns;
     }
 }
