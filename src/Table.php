@@ -228,6 +228,7 @@ class Table {
             $type = !is_array($value) ? $value : $value['type'];
 
             $attributes = ['value' => isset($request[$key]) ? $request[$key] : '', 'name' => $key];
+
             if( is_array($value) )
                 $attributes = array_merge($value, $attributes);
 

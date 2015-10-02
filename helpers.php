@@ -40,7 +40,7 @@ function render_pagination(Table $table, $perPage = null, array $appends = array
  * Get form filter .
  *
  * @param Table $table
- * @return \Flysap\FormBuilder\Form
+ * @return \Parfumix\FormBuilder\Form
  */
 function get_filter_form(Table $table) {
     return $table->renderFilter();

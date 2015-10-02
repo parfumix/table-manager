@@ -159,7 +159,6 @@ class Column {
         $html .= $this->renderAttributes(['class', 'id']);
         $html .= '>';
 
-
         if( $this->isSortable() ) {
             $sortable = $this->getAttribute('sortable');
             $slug     = $this->getTitle();;
