@@ -4,7 +4,7 @@
   "repositories": [
     {
       "type": "git",
-      "url" : "git@github.com:flysap/form-builder.git"
+      "url" : "git@github.com:parfumix/form-builder.git"
     },
     {
       "type": "git",
@@ -13,7 +13,7 @@
   ],
   "require": {
       "illuminate/pagination": "v5.*",
-      "flysap/form-builder": "dev-master",
+      "parfumix/form-builder": "dev-master",
       "flysap/support": "dev-master",
       "illuminate/pagination": "~5.1"
   },

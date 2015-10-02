@@ -2,7 +2,7 @@
 
 namespace Parfumix\TableManager;
 
-use Flysap\FormBuilder;
+use Parfumix\FormBuilder;
 
 /**
  * Create table .

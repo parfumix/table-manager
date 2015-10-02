@@ -2,8 +2,8 @@
 
 namespace Parfumix\TableManager;
 
-use Flysap\FormBuilder\Form;
-use Flysap\FormBuilder;
+use Parfumix\FormBuilder\Form;
+use Parfumix\FormBuilder;
 use Flysap\Support\Traits\ElementAttributes;
 use Parfumix\TableManager\Traits\Columns;
 use Parfumix\TableManager\Traits\Rows;
