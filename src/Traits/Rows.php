@@ -2,7 +2,7 @@
 
 namespace Parfumix\TableManager\Traits;
 
-use Flysap\TableManager\Row;
+use Parfumix\TableManager\Row;
 use Illuminate\Support\Collection;
 
 trait Rows {

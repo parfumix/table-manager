@@ -1,6 +1,6 @@
 <?php
 
-namespace Parfumux\TableManager;
+namespace Parfumix\TableManager;
 
 use Flysap\FormBuilder;
 

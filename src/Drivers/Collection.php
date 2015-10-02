@@ -2,7 +2,7 @@
 
 namespace Parfumix\TableManager\Drivers;
 
-use Flysap\TableManager\DriverAble;
+use Parfumix\TableManager\DriverAble;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class Collection extends Driver implements DriverAble  {

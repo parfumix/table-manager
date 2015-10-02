@@ -2,7 +2,7 @@
 
 namespace Parfumix\TableManager\Traits;
 
-use Flysap\TableManager\Column;
+use Parfumix\TableManager\Column;
 
 trait Columns {
 

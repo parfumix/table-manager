@@ -2,7 +2,7 @@
 
 namespace Parfumix\TableManager\Drivers;
 
-use Flysap\TableManager\DriverAble;
+use Parfumix\TableManager\DriverAble;
 use Illuminate\Support\Collection;
 
 class Eloquent extends Driver implements DriverAble {

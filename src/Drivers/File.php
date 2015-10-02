@@ -3,8 +3,8 @@
 namespace Parfumix\TableManager\Drivers;
 
 use Flysap\Support;
-use Flysap\TableManager\DriverAble;
-use Flysap\TableManager\TableException;
+use Parfumix\TableManager\DriverAble;
+use Parfumix\TableManager\TableException;
 
 class File extends Collection implements DriverAble  {
 
