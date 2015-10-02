@@ -1,0 +1,14 @@
+# default driver
+default: eloquent
+
+# here will be declared all drivers .
+drivers:
+  collection:
+    class: Parfumix\TableManager\Drivers\Collection
+  eloquent:
+    class: Parfumix\TableManager\Drivers\Eloquent
+  file:
+    class: Parfumix\TableManager\Drivers\File
+
+# items per page .
+perPage: 5

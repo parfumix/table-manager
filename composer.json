@@ -1,0 +1,34 @@
+{
+  "name": "parfumix/table-manager",
+  "description": "SMG",
+  "repositories": [
+    {
+      "type": "git",
+      "url" : "git@github.com:flysap/form-builder.git"
+    },
+    {
+      "type": "git",
+      "url" : "git@github.com:flysap/support.git"
+    }
+  ],
+  "require": {
+      "illuminate/pagination": "v5.*",
+      "flysap/form-builder": "dev-master",
+      "flysap/support": "dev-master",
+      "illuminate/pagination": "~5.1"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Radu",
+      "email": "radu.bordei89@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Parfumix\\TableManager\\": "src/"
+    },
+    "files": ["helpers.php"]
+  },
+  "minimum-stability": "dev"
+}
