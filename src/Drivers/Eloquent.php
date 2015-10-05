@@ -25,12 +25,27 @@ class Eloquent extends Driver implements DriverAble {
         if( in_array('skyShow', get_class_methods(get_class($this->getSource()->getModel()))))
             $columns = $this->getSource()->getModel()->skyShow();
 
+        /**
+         * Here we'll check if eloquent implements translatable contract,
+         *  if than w'll extract translatable fields and show them .
+         */
+        $isTranslatable = false;
+        if( in_array('translatedAttributes', get_class_methods(get_class($this->getSource()->getModel())))) {
+            $isTranslatable = true;
+
+            $columns = array_merge($columns, $this->getSource()->getModel()->translatedAttributes());
+        }
+
         foreach ($rows as $key => $row) {
             foreach ($columns as $columnKey => $column) {
                 if( is_numeric($columnKey) )
                     $columnKey = $column;
 
-                $value = $row->$columnKey;
+                if( ! $value = $row->getAttributeValue($columnKey) ) {
+                    if( $isTranslatable )
+                        if( $translationRow = $row->translate() )
+                            $value = $translationRow->getAttributeValue($columnKey);
+                }
 
                 if( $value instanceof Collection ) {
                     $attribute = [];
