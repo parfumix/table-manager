@@ -206,6 +206,12 @@ class Table {
 
         $html .= $this->getJs();
 
+        /** If there is sortable connected than start . */
+        if( $this->hasAttribute('sortable') && $this->getAttribute('sortable') )
+            $html .= $this->getSortableJs(
+                $this->getAttribute('sortable')
+            );
+
         return $html;
     }
 
@@ -247,6 +253,42 @@ class Table {
         return $form;
     }
 
+
+    /**
+     * Get sortable js .
+     *
+     * @param array $attributes
+     * @return string
+     */
+    public function getSortableJs($attributes = array()) {
+        $url = isset($attributes['url']) ? $attributes['url'] : '';
+
+        return <<<DOC
+<script type='text/javascript'>
+$(function() {
+        function fixWidthHelper(e, ui) {
+            ui.children().each(function() {
+                $(this).width($(this).width());
+            });
+            return ui;
+        }
+
+        $("table tbody").sortable({
+            helper: fixWidthHelper,
+            update: function(event, ui) {
+                var item = ui.item;
+
+                var position = (item.prev('tr').length) ? 'after' : 'before';
+
+                $.post('{$url}', {sortable: {
+                    id: item.attr('data-id'), position: position, element: (item.prev('tr').length) ? item.prev('tr').attr('data-id') : item.next('tr').attr('data-id')
+                }});         }
+        }).disableSelection();
+})
+</script>
+DOC;
+
+    }
 
     /**
      * Include js scripts .
@@ -299,6 +341,7 @@ class Table {
 JS;
 
     }
+
 
     /**
      * Render __toString magic f.
