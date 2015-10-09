@@ -33,9 +33,15 @@ class Row {
     public function render() {
         $html = '<tr ';
         $html .= $this->renderAttributes();
+
+        if( $this->getColumn('id') )
+            if( $value = $this->getElement('id') )
+                $html .= ' data-id="' . $value . '"';
+
         $html .= '>';
 
         $columns = $this->getColumns();
+
         array_walk($columns, function($column, $title) use(& $html) {
             if( ! $column->isAllowed() )
                 return false;
