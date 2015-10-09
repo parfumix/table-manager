@@ -17,7 +17,7 @@ class Eloquent extends Driver implements DriverAble {
         $source = $this->getSource();
 
         $paginator = $source->paginate($perPage);
-        $rows      = $paginator->getCollection();
+        $rows      = $paginator->getCollection()->sortBy('position');
 
         $fields = [];
 
