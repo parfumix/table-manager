@@ -183,7 +183,10 @@ class Table {
         $html .= '<thead>';
         $html .= '<tr>';
 
-        $data = $this->getDriver()->getData($this->getPerPage());
+        $data = $this->getDriver()->getData(
+            $this->getPerPage()
+        );
+
         $this->addColumns($data['columns']);
         $this->addRows($data['rows'], $this->getColumns());
 
