@@ -73,7 +73,7 @@ function render_filter_form(Table $table, $attributes = array()) {
         $html .= '</div>';
     });
 
-    $html .= FormBuilder\get_element('button', ['value' => _("Search"), 'type' => 'submit'])
+    $html .= FormBuilder\get_element('button', ['value' => _("Search"), 'type' => 'submit', 'class' => 'btn btn-success btn-search btn-flat'])
         ->render();
 
     $html .= $form->closeForm();

@@ -232,11 +232,18 @@ class Table {
         $elements = [];
         foreach ($fields as $key => $value) {
             $type = !is_array($value) ? $value : $value['type'];
+        
 
-            $attributes = ['value' => isset($request[$key]) ? $request[$key] : '', 'name' => $key];
+        #@todo spark----------------
+            $attributes = ['value' => isset($request[$key]) ? $request[$key] : '', 'name' => $key, 'class' => 'form-control'];
 
             if( is_array($value) )
                 $attributes = array_merge($value, $attributes);
+
+           
+            $attributes['before'] = '<div class="form-group">';
+
+            $attributes['after'] = '</div>';
 
             if(! isset($attributes['label']))
                 $attributes['label'] = ucfirst($key);
@@ -247,8 +254,10 @@ class Table {
         }
 
         $form = new Form([
-            'elements' => $elements
+            'elements' => $elements,
+            'class' => 'form-inline'
         ]);
+
 
         return $form;
     }
