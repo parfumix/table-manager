@@ -235,7 +235,7 @@ class Table {
         $elements = [];
         foreach ($fields as $key => $value) {
             $type = !is_array($value) ? $value : $value['type'];
-        
+
 
         #@todo spark----------------
             $attributes = ['value' => isset($request[$key]) ? $request[$key] : '', 'name' => $key, 'class' => 'form-control'];
@@ -243,7 +243,7 @@ class Table {
             if( is_array($value) )
                 $attributes = array_merge($value, $attributes);
 
-           
+
             $attributes['before'] = '<div class="form-group">';
 
             $attributes['after'] = '</div>';
@@ -258,7 +258,7 @@ class Table {
 
         $form = new Form([
             'elements' => $elements,
-            'class' => 'form-inline'
+            'class' => 'form-horizontal'
         ]);
 
 
