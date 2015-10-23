@@ -258,7 +258,7 @@ class Table {
 
         $form = new Form([
             'elements' => $elements,
-            'class' => 'form-horizontal'
+            'class' => 'form-inline'
         ]);
 
 
